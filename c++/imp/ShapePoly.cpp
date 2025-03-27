@@ -10,9 +10,6 @@ class Shape
      public:
       Shape()
       {
-      	height=0;
-      	width=0;
-      	radius=0;
 
       }
       Shape(int h, int w)
@@ -31,7 +28,7 @@ class Shape
       virtual float cal_area()=0;
       void display()
       {
-        cout<<"\n"<<"Height := "<<height<<"\t Width := "<<width<<"\t Radius:= "<<radius;
+        cout<<"Height := "<<height<<"\t Width := "<<width<<"\t Radius:= "<<radius;
       }
 };
 
@@ -55,10 +52,21 @@ class Triangle:public Shape
     {
         return (height*width)/2;
     }
-    void display_t()
+    void display()
     {
-        display();
+        cout<<"\nHeight:= "<<height<<"\t"<<"Width:= "<<width;
     }
+
+    bool operator == (Triangle &t)
+	{
+		if((this->cal_area() == t.cal_area()))
+		{
+			return true;
+		} else 
+		{
+			return false;
+		}
+	}
 };
 
 class Circle:public Shape
@@ -85,12 +93,7 @@ class Circle:public Shape
     {
         return (3.14*radius*radius);
     }
-    void display_c()
-    {
-    	display();
-    	cout<<"\t"<<"Point X:= "<<pointx<<"\t"<<"Point Y:= "<<pointy;
-	}
-	bool operator == (Circle &c)
+    bool operator == (Circle &c)
 	{
 		if((this->cal_area() == c.cal_area()))
 		{
@@ -100,32 +103,53 @@ class Circle:public Shape
 			return false;
 		}
 	}
+
+    void display()
+    {
+        cout<<"\nPoint X:= "<<pointx<<"\t"<<"Point Y:= "<<pointy<<"\t"<<"Radius:= "<<radius;
+    }
 };
 int main()
 {
-//    Shape *trptr=new Triangle(5,6);
-//    trptr->display();
-//    delete trptr;
-    Triangle t1(6,4);
+     Triangle t1(5,6);
     t1.display();
-    cout<<"\nArea of Traingle:= "<<t1.cal_area();
+    cout<<"\nArea of Triangle :- ";
+    cout<<t1.cal_area()<<"\n";
+    Triangle t2(6,4);
+    t2.display();
+    cout<<"\nArea of Triangle :- ";
+    cout<<t2.cal_area()<<"\n";
+
+
+    if(t1==t2)
+    {
+        cout<<"\nBoth Traingle are same\n";
+    } 
+    else
+    {
+        cout<<"\nBoth Traingle are Different\n";
+    }
+
     
-    Circle c1(2,2,3);
-    c1.display_c();
-    cout<<"\nArea of Circle1:= "<<c1.cal_area();
-    
-    Circle c2(3,3,3);
-    c2.display_c();
-    cout<<"\nArea of Cricle2:= "<<c2.cal_area();
-    
+    Circle c1(2,2,3), c2(3,3,8);
+    c1.display();
+    cout<<"\nArea of Circle:- ";
+    cout<<c1.cal_area()<<"\n";
+   
+    c2.display();
+    cout<<"\nArea of Circle:- ";
+    cout<<c2.cal_area()<<"\n";
+
+
     if(c1==c2)
     {
-    	cout<<"\n Both circle are of same area";
-	}else 
-	{
-		cout<<"\n Both circle are of Different area";
-	}
-    
+        cout<<"\nBoth Traingle are same\n";
+    } 
+    else
+    {
+        cout<<"\nBoth Traingle are Different\n";
+    }
+
     return 0;
 
 }
