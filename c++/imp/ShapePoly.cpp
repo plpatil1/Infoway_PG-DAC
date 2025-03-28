@@ -143,11 +143,11 @@ int main()
 
     if(c1==c2)
     {
-        cout<<"\nBoth Traingle are same\n";
+        cout<<"\nBoth Circle are same\n";
     } 
     else
     {
-        cout<<"\nBoth Traingle are Different\n";
+        cout<<"\nBoth Circle are Different\n";
     }
 
     return 0;
