@@ -14,3 +14,16 @@
 #### Using the Thread Class: You can create threads by extending the Thread class and overriding its run() method. 
 #### Using the Runnable Interface: Alternatively, you can implement the Runnable interface and pass the runnable object to a new Thread instance. 
 #### Concurrency Utilities: Java provides a set of concurrency utilities, such as the Executor Framework, Thread Pools, and Callable and Future, to simplify the development of multithreaded applications. 
+
+##  Key Concepts in Multithreading: 
+
+### Thread Lifecycle: 
+#### Threads go through different states, such as NEW, RUNNABLE, RUNNING, WAITING, BLOCKED, and TERMINATED. 
+
+### Thread Priorities: 
+#### Threads can have different priorities, which can influence how they are scheduled by the operating system. 
+
+### Synchronization:
+#### When multiple threads access shared resources, synchronization mechanisms like synchronized blocks and wait/notify methods are used to prevent race conditions and ensure data consistency. 
+### Deadlock: 
+#### A situation where two or more threads are blocked indefinitely, waiting for each other to release resources. 
