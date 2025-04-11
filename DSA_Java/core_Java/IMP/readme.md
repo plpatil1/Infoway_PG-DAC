@@ -1,1 +1,3 @@
-"adding important Questions related Java and DSA here " 
+## revisit all points before exam:-
+### [] FileHandling
+### [] Expception Handling
