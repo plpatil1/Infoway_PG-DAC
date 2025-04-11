@@ -5,3 +5,4 @@
 ###  4. Collection
 ###  5. Collections FrameWork
 ###  6. Lambda Expression
+###  7. Functional Interfaces
