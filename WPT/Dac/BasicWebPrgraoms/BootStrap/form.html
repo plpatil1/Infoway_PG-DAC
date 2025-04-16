@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-3">
+        <form class="was-validated">
+        <div>
+           <label for="txtname" class="form-label">Enter Your FullName
+           </label>
+
+           <input type="text" name="fname" id="txtname" class="form-control" required>
+
+           <span class="valid-feedback">Correct data inserted</span>
+           <span class="invalid-feedback">this Feild is required</span>
+   
+           <button type="submit" class="btn btn-primary mt-2">Submit</button>
+       </div>
+       <hr><hr>
+
+       <div>
+           <label for="txtname" class="form-label">Enter Your email
+           </label>
+
+           <input type="email" name="mail" id="txtmail" class="form-control" required>
+
+           <span class="valid-feedback">Correct data inserted</span>
+           <span class="invalid-feedback">this Feild is required</span>
+        </div>
+
+        <div>
+            <label for="">Select Your Course</label>
+            <select name="course" id="" class="form-control">
+                <option value="">Select Your Options</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JavaScript</option>
+                <option value="react">React.js</option>
+            </select>
+        </div>
+   
+        <div>
+            <label for="" class="form-check-label mt-3">
+                <input type="checkbox" name="term" class="form-check-input" value="true" required>I Agree Term and Condition
+            </label>
+            
+        </div>
+           <button type="submit" class="btn btn-success mt-2">Submit</button>
+        </form>
+   
+       </div>
+
+</body>
+</html>
