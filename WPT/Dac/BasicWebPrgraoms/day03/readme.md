@@ -8,4 +8,6 @@
 
 ## Heading Classes in BootStrap
 ## Color Classes in BootStrap
+## Table Classes in BootStrap
+## NavBar
 
