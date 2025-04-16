@@ -11,3 +11,4 @@
 ## Table Classes in BootStrap
 ## NavBar
 ## Carousel
+## Accordions
