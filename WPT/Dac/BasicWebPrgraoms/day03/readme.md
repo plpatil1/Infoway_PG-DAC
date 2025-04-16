@@ -7,4 +7,5 @@
 
 
 ## Heading Classes in BootStrap
+## Color Classes in BootStrap
 
