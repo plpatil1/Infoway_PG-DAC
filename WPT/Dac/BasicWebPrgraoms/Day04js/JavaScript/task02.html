@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <style>
+        myborder {
+            border: 5px solid green;
+            width: 250px;
+            height: 250px;
+            left: 50%;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container m-3">
+        <div>
+            <img class="myborder" id="jckb"
+                src="https://w0.peakpx.com/wallpaper/876/821/HD-wallpaper-tv-show-peaky-blinders.jpg" alt="jackbhau">
+
+            <h3 id="jckn" class="myborder">PeakyBhau</h3>
+
+
+        </div>
+        <button type="button" class="btn btn-success m-5" onclick="changing()" id="bt1">Change</button>
+    </div>
+
+    <script>
+        function changing() {
+            
+            if (document.getElementById("jckb").src.includes("https://w0.peakpx.com/wallpaper/876/821/HD-wallpaper-tv-show-peaky-blinders.jpgs")) {
+                
+                document.getElementById("jckb").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQENW4yTCOLhlV7CsLeR3IjxBxA4g_FC6HsC2Gd75TszraZOqhKuzyAGoq2IHy379ikfcw&usqp=CAU";
+
+                document.getElementById("jckn").innerHTML = "PeakyBhau";
+
+            } else {
+                document.getElementById("jckb").src = "https://w0.peakpx.com/wallpaper/876/821/HD-wallpaper-tv-show-peaky-blinders.jpg";
+
+                document.getElementById("jckn").innerHTML = "PeakyBhau";
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
