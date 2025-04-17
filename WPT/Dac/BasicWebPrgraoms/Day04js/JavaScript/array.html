@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let city=["Pune", "Mumbai", "Sambhajimagar"];
+
+        let myCity=city[2]; //access to array.
+        console.log(myCity);
+
+        city[1]="Solapur"; //update array 
+        console.log(city);
+        console.log(city.length); //length of array.
+
+        console.log(city.length-1); //size of array.
+
+        city.push("Nashik"); // adding new element in array.
+
+        console.log(city);
+    
+        city.pop(); //removing last element from array
+
+   //splice(startIndex, deleteCount, add-value): it is use add and remove array values from middle in index of array.
+
+   city.splice(2,0, "Nagpur", "Amravati", "Satara"); // adding new elements from index 2 to.
+
+   city.splice(3,1);
+
+
+        console.log(city);
+
+    </script>
+</body>
+</html>
