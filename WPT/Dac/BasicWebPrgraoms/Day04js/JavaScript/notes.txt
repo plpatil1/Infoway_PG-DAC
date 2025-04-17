@@ -1,0 +1,66 @@
+17/04/2025 Thursday
+## Types of Website: 2 Types
+
+1) Static Website: Website where where user cannot change it and only read purpose
+
+
+
+2) Dynamic Website:- Website were user can make changes at runtime that's called Dynamic Website etc: whatsapp, instagram
+
+
+when we use html, css, bootstrap only which is Static but if we use javascript for it so we can make it Dynamic Website.
+
+Let's Learn javascript :-
+
+# javascript :
+
+-- it is use to add functionality into Web Application
+-- it is loosely typed language
+-- it interpreted language 
+-- when we use variable in javascript we cannot tell what kind of data in it untill and unless we initilized it
+-- 
+
+
+* there are two ways to use javascript
+
+1. Internal javascript : in Html File we write javascript in script, in head part 
+
+2. External javascript : in this we create a seprate js file abd import it in html file by using script tag
+
+
+* How to get or display output in javascript
+1. document.write(): it will display output on browser
+2. window.alert(): it will generare  popup window and display output in it #Global OR Main Object in javascript
+3. console.log(): it will display output in browser console in terminal
+4. innerHTML  (DOM): it is to insert data inside an element by using element id.
+
+* in JavaScript there are three ways to create variable
+
+var, let, const;
+
+Q. why javascript is called as loosely typed?
+--
+Q.what is Hosting?
+-- it is default javascript behavior which moves variable declaration at top. this we can use variable first and then declare it.
+
+Q. what is Difference Between var, let and const?
+-- ES(ECMA) script, 2009(ES5), 2015(ES6);
+
+-- var: i) it create function  scope variable
+        ii) it can reintialize variable
+
+-- let: i) it create block scope variable
+        ii) we not use variable before declaration of it
+        iii) we can not redeclare variable 
+
+-- const: i)its value never change at run time        
+          ii) when we use declare it we have to initialized it.
+
+
+
+
+* Function in javascript
+-- it is block of code which is use to perform particular task/operation
+-- function will execute only when we call it.
+-- function 
+
