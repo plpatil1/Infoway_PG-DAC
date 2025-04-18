@@ -13,52 +13,58 @@
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
 
+
     <style>
-        myborder {
-            border: 5px solid green;
-            width: 250px;
-            height: 250px;
-            left: 50%;
+        body {
+            display: flex;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgb(106, 25, 182);
+        }
+
+        .box {
+            border: 5px solid black;
+            width: 300px;
+            height: 300px;
+            border-radius: 300px;
+            align-items: center;
+            justify-content: center;
+            background-color: #145b77d3;
+
+        }
+
+        .box:hover {
+            background-color: rgba(160, 11, 160, 0.37);
+            border: 5px solid rgba(131, 119, 196, 0.521);
+            transform: scale(1.5);
+            box-shadow: 0 0 180px rgb(9, 3, 66);
+            color: rgba(133, 46, 86, 0.76);
+        }
+
+        #d2 {
+            position: fixed;
+            background: #6b6d6b;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container m-3">
-        <div>
-            <img class="myborder" id="jckb"
-                src="https://w0.peakpx.com/wallpaper/876/821/HD-wallpaper-tv-show-peaky-blinders.jpg" alt="jackbhau">
-
-            <h3 id="jckn" class="myborder">PeakyBhau</h3>
 
 
-        </div>
-        <button type="button" class="btn btn-success m-5" onclick="changing()" id="bt1">Change</button>
-    </div>
+    <div class="box" name="d1" id="d1"> </div>
+    <h1 id="d2">__:__:__</h1>
+
 
     <script>
-        function changing() {
-            
-            if (document.getElementById("jckb").src.includes("https://w0.peakpx.com/wallpaper/876/821/HD-wallpaper-tv-show-peaky-blinders.jpgs")) {
-                
-                document.getElementById("jckb").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQENW4yTCOLhlV7CsLeR3IjxBxA4g_FC6HsC2Gd75TszraZOqhKuzyAGoq2IHy379ikfcw&usqp=CAU";
-
-                document.getElementById("jckn").innerHTML = "PeakyBhau";
-
-            } else {
-                document.getElementById("jckb").src = "https://w0.peakpx.com/wallpaper/876/821/HD-wallpaper-tv-show-peaky-blinders.jpg";
-
-                document.getElementById("jckn").innerHTML = "PeakyBhau";
-            }
+        function myClock() {
+            let time = new Date();
+            document.getElementById("d2").innerHTML = time.toLocaleTimeString();
         }
-
-
-
-
-
+        setInterval(myClock, 1000);
     </script>
+
 </body>
 
 </html>
