@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        function greet(){
+            console.log("Hello Sir!");
+        }
+//    console.log(greet());
+
+    function welcome(param1){
+        return "Welcome in Cdac! ";
+    }
+    console.log(welcome(greet));
+
+   // settimeOut(); : -- it call another menthod only onetime after perticulare time interval.
+   setTimeout(greet,2000);
+
+//    setInterval(); : -- ti cal another method multiple time after perticular time interval.
+setInterval(()=> {console.log("My Name is Pawan")},50000);
+
+    </script>
+</body>
+</html>
