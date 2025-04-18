@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+        <script src="./task01.js"></script>
+
+    <title>Document</title>
+
+    <style>
+        .myform {
+            border: 2px solid hotpink;
+            width: 800px;
+            height: 600px;
+            padding: 15px;
+            margin: 15px;
+            position: relative;
+            left: 15%;
+        }
+
+        .myelement {
+            border: solid green;
+            width: 225px;
+            height: 150px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <form class="myform" onclick="changing()">
+        <label for="tempAdd" class=" mb-5">Temprary Address</label>
+        <input class="form-control myelement" type="text" name="tempAdd" id="tempAdd">
+
+        <button type="button" class="btn btn-outline-success mt-3" p>Same as Permandant</button>
+
+       <h5 class="m-3">Permandant Address</h5>
+       <p class="form-control myelement" name="padd" id="padd"></p>
+
+    </form>
+
+    <script>
+        
+
+function changing(){
+    let id = document.getElementById("tempAdd").value;
+
+    document.getElementById("padd").innerHTML = id;
+
+}
+    </script>
+
+
+</body>
+
+</html>
