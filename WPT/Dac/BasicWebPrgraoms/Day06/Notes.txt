@@ -1,0 +1,1 @@
+JQuery is javascript Framwork it use to make our javascript easy
