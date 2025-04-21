@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+
+  <title>Document</title>
+
+
+
+  <style>
+    .myborder {
+      border: 2px solid blueviolet;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Product Dashboar</h1>
+
+    <div class="row">
+      <div class="col-sm-9 myborder">
+        <table class="table table-bordered table-hover text-center table-striped my-2">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Company</th>
+              <th>Quantity</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="d1">
+
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col-sm-3 myborder">
+        <label class="form-label">Enter Product Id to Delete Product</label>
+        <input type="text" name="pid" id="pid" class="form-control">
+        <button type="button" class="btn btn-outline-danger" onclick="deleteData()">Delete Product</button>
+      </div>
+    </div>
+
+    <div class="col-sm-6 myborder">
+      <strong>Enter Product Information To Add</strong>
+      <input type="text" name="name" id="ptname" placeholder="Enter Product Name" class="form-control my-2">
+      <input type="text" name="price" id="ptprice" placeholder="Enter Product Price" class="form-control my-2">
+      <input type="text" name="company" id="ptcompany" placeholder="Enter Product company" class="form-control my-2">
+      <input type="text" name="quantity" id="ptquantity" placeholder="Enter Product Quantity" class="form-control my-2">
+
+      <button type="button" class="btn btn-outline-primary mb-2" name="myaddbtn" onclick="myAdd()">Add Product</button>
+    </div>
+
+    <div class="col-sm-6 myborder"><strong>Enter Id to Update Product Information: </strong>
+      <input type="text" name="utid" id="utid" class="form-control my-2"
+        placeholder="Enter ProductID to Update Product Data">
+      <button type="button" class="btn btn-outline-success mb-2" name="myupbtn" onclick="getSinglProduct()">Finout
+        Product</button>
+      <hr>
+      <strong>Enter Product Information to Update Product Data</strong>
+      <input type="text" name="name" id="utname" placeholder="Enter Product Name" class="form-control my-2">
+      <input type="text" name="price" id="utprice" placeholder="Enter Product Price" class="form-control my-2">
+      <input type="text" name="company" id="utcompany" placeholder="Enter Product company" class="form-control my-2">
+      <input type="text" name="quantity" id="utquantity" placeholder="Enter Product Quantity" class="form-control my-2">
+      <button type="button" class="btn btn-outline-success mb-2" name="myupbtnnn" onclick="updateProduct()">Update
+        Product</button>
+
+    </div>
+  </div>
+
+
+  </div>
+
+
+
+
+
+  <script src="./external.js"></script>
+</body>
+
+</html>

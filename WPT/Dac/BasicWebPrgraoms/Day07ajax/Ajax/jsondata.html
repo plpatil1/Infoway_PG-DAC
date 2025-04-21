@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let empobj = [
+            {id:101, name:"Suraj", post:"JavaDeveloper", Address:"Pune"},
+            {id:101, name:"Swarup", post:"DevopsEngineer", Address:"Mumbai"},
+            {id:101, name:"Sagar", post:"TechnicalLead", Address:"Pune"}
+        ]
+        // conver javascript object to json data
+        let jsonData = JSON.stringify(empobj);
+        document.write(jsonData);
+
+        // convert json data to javascript object
+       console.log(jsonData);
+        console.log(JSON.parse(jsonData));
+
+    </script>
+    
+</body>
+</html>

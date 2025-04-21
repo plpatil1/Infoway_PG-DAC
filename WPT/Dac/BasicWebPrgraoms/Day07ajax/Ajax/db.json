@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 75000,
+      "company": "Dell",
+      "quantity": 10
+    },
+    {
+      "id": "2",
+      "name": "KeyBoard",
+      "price": 5000,
+      "company": "Intel",
+      "quantity": 50
+    },
+    {
+      "id": "3",
+      "name": "Mouse",
+      "price": 2000,
+      "company": "HP",
+      "quantity": 100
+    },
+    {
+      "name": "",
+      "price": "",
+      "company": "",
+      "quantity": "",
+      "id": "5"
+    },
+    {
+      "name": "",
+      "price": "",
+      "company": "",
+      "quantity": "",
+      "id": "6"
+    }
+  ],
+  "Employee": [
+    {
+      "id": "1102",
+      "name": "Himanshu",
+      "post": "Frontend",
+      "salary": 150000,
+      "location": "Pune-1",
+      "mode": "Online"
+    },
+    {
+      "id": "1103",
+      "name": "Yash",
+      "post": "Backend",
+      "salary": 35000,
+      "location": "Pune-2",
+      "mode": "Hybrid"
+    },
+    {
+      "id": "1101",
+      "name": "Yogesh",
+      "post": "Team Lead",
+      "salary": "65433",
+      "location": "Kochi",
+      "mode": "offline"
+    }
+  ]
+}

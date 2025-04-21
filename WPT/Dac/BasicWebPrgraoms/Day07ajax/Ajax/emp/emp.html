@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+        <style>
+            .myborder {
+                border: 4px solid rgb(73, 71, 139);
+
+            }
+            .myborder1 {
+                border: 2px solid rgb(34, 136, 127);
+
+            }
+            .mytext {
+                background-color: rgb(177, 106, 106);
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+            .mythead {
+                background-color: black;
+                color: antiquewhite;
+
+            }
+        </style>
+
+</head>
+
+<body>
+
+    <div class="container m-5 myborder">
+        <h1 class="mytext">--Employee CRUD Operations--</h1>
+        <div class="row myborder m-3">
+            <div class="col-sm-9 myborder1">
+
+                <table class="table  table-bordered table-hover text-center table-striped my-2">
+                    <thead class="mythead">
+                        <tr>
+                            <th class="mythead">Id</th>
+                            <th class="mythead">Name</th>
+                            <th class="mythead">Post</th>
+                            <th class="mythead">Salary</th>
+                            <th class="mythead">Location</th>
+                            <th class="mythead">Mode</th>
+                        </tr>
+                    </thead>
+                    <tbody id="d1">
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-sm-3 myborder1 ">
+                <strong>Delete Employee Details</strong>
+                <input type="text" class="form-control m-3" id="did" name="did" placeholder="Enter ID to Delete: ">
+
+                <button type="button" class="btn btn-outline-danger m-3" onclick="deleteEmp()">DeleteEmployee</button>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6 myborder1 m-3">
+                     <strong class="m-2">Enter Employee Details to Add/strong>
+
+                        <input type="text" class="form-control m-2" id="aid" name="aid" placeholder="Enter Employee Id"> 
+                        <input type="text" class="form-control m-2" id="aname" name="aname" placeholder="Enter Employee Name"> 
+                        <input type="text" class="form-control m-2" id="apost" name="apost" placeholder="Enter Employee Post"> 
+                        <input type="text" class="form-control m-2" id="asalary" name="asalary" placeholder="Enter Employee Salary"> 
+                        <input type="text" class="form-control m-2" id="alocation" name="alocation" placeholder="Enter Employee Location"> 
+                        <input type="text" class="form-control m-2" id="amode" name="amode" placeholder="Enter Employee Mode"> 
+
+                        <button type="text" class="btn btn-outline-success m-3" onclick="addEmp()">Add Employee</button>
+            </div>
+            <div class="col-sm-6 myborder1 m-3">
+                  <strong>Update Employee Details</strong>
+                  <input type="text" class="form-control m-2" id="uid" placeholder="Enter Id to Updated Details">
+
+                  <button type="button" class="btn btn-outline-warning m-3" onclick="getForUpdate()">isIdPresent</button>
+                  <input type="text" class="form-control m-2" id="uname" placeholder="enter Name here">
+                  <input type="text" class="form-control m-2" id="upost" placeholder="enter Post here">
+                  <input type="text" class="form-control m-2" id="usalary" placeholder="enter Salary here">
+                  <input type="text" class="form-control m-2" id="ulocation" placeholder="enter Location here">
+                  <input type="text" class="form-control m-2" id="umode" placeholder="enter Mode here">
+                  <button type="button" class="btn btn-outline-success m-3" onclick="updateEmp()">UpdateEmp</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+
+    let parentElement = document.getElementById("d1");
+
+let getObj = new XMLHttpRequest();
+
+
+getObj.onload = function() {
+    let data = JSON.parse(this.responseText);
+    
+    for(let d of data){
+        let newRow = document.createElement("tr");
+        
+        newRow.innerHTML = `<td>${d.id}</td> <td>${d.name}</td> <td>${d.post}</td> <td>${d.salary}</td> <td>${d.location}</td> <td>${d.mode}</td>`;
+
+        parentElement.appendChild(newRow);
+
+    }
+}
+getObj.open("GET", `http://localhost:7777/Employee`);
+getObj.send();
+
+
+// *******************delete function ***********************
+
+function deleteEmp() {
+    let id = document.getElementById("did").value;
+
+    let delObj = new XMLHttpRequest();
+
+    delObj.onload = function () {
+        window.alert("Deleted Employee Details");
+    }
+
+    delObj.open("DELETE", `http://localhost:7777/Employee/${id}`);
+    delObj.send();
+}
+
+// ************************** Add Function Started ***********************************
+function addEmp() {
+    let addArr={
+        id:document.getElementById("aid").value,
+        name:document.getElementById("aname").value,
+        post:document.getElementById("apost").value,
+        salary:document.getElementById("asalary").value,
+        location:document.getElementById("alocation").value,
+        mode:document.getElementById("amode").value
+    };
+    let addObj = new XMLHttpRequest();
+    let adddetails = JSON.stringify(addArr);
+
+    addObj.onload = function () {
+        window.alert("Added SucessFully...");
+    }
+    addObj.open("POST", `http://localhost:7777/Employee`);
+    addObj.send(adddetails);
+}
+
+// ********************************* Update function started *************************************************
+let uuid;
+function getForUpdate(){
+    uuid = document.getElementById("uid").value;
+    let gObj = new XMLHttpRequest();
+
+
+    
+    gObj.onload = function (){
+        let data = JSON.stringify(this.responseText);
+
+        for(let d of data){
+            if(!(uuid === d.id)){
+                window.alert("Id Not Matched With Database!")
+                break;
+            }
+            else {
+            updateEmp(uuid);
+            }
+        }
+    }
+    gObj.open("GET", `http://localhost:7777/Employee/${uuid}`);
+    gObj.send();
+
+
+}
+
+function updateEmp(uuid) {
+    let upEntity = {
+        name:document.getElementById("uname").value,
+        post:document.getElementById("upost").value,
+        salary:document.getElementById("usalary").value,
+        location:document.getElementById("ulocation").value,
+        mode:document.getElementById("umode").value
+     };
+     
+     let updateObj = new XMLHttpRequest();
+      let updata = JSON.stringify(upEntity);
+     updateObj.onload = function () {
+        window.alert("Details Updated SucessFully......");
+
+     }
+     updateObj.open("PUT", `http://localhost:7777/Employee/${uuid}`);
+     updateObj.send(updata);
+}
+
+
+</script>
+
+</html>
