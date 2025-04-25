@@ -1,0 +1,12 @@
+.txtPrimary{
+  color: dodgerblue;
+  text-transform: uppercase;
+  background-color: bisque;
+}
+
+.txtSuccess{
+    color: brown;
+    text-transform: lowercase;
+    background-color: rgb(149, 171, 117)
+
+}
