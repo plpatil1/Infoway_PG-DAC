@@ -255,9 +255,49 @@ public class SingleLinkedList {
 			}
 		}
 	
+		
+		
+		public void insert_sorted(int d) {
+			IntNode NN = new IntNode(d);
+			
+			if((head==null) || (head.getData()>d)) {
+				NN.setNext(head);
+				head=NN;
+				return;
+			}
+			
+			IntNode itr = head;
+			
+			while((itr.getNext() != null) && ((itr.getNext().getData())<d)) {
+				itr = itr.getNext();
+			}
+			
+			NN.setNext(itr.getNext());
+			itr.setNext(NN);
+			return;
+			
+		}
 	
 	
+	public SingleLinkedList concatLL(SingleLinkedList ll1) {
+		SingleLinkedList res = new SingleLinkedList();
+		IntNode itr = head;
+		while(itr.getNext() != null) {
+			res.InsertFirst(itr.getData());
+			itr=itr.getNext();
+		}
+		res.InsertFirst(itr.getData());
+		
+		itr = ll1.head;
+		while(itr != null) {
+			res.InsertLast(itr.getData());
+			itr= itr.getNext();
+		}
+		return res;
+		
+	}
 	
+	  
 	
 	
 	
