@@ -141,6 +141,9 @@ public int calHeight() {
 	return cnt;
 }
 
+
+
+	
 public static boolean isIdentical(BinaryTree bt1, BinaryTree bt2) {
 	
 	
@@ -183,5 +186,70 @@ public static boolean isIdentical(BinaryTree bt1, BinaryTree bt2) {
 		return false;
 	}
 }
+
+Here's your modified mirrorImage() method with TreeNode replaced by BTNode as per your requirement:
+
+public void mirrorImage() 
+{
+    if (root == null) 
+    {
+        return;
+    }
+
+    Queue<BTNode> q = new LinkedList<BTNode>();
+    q.add(root);
+
+    while (!q.isEmpty()) 
+    {
+        BTNode curr = q.remove();
+
+        // Swap left and right children
+        BTNode temp = curr.getLeft();
+        curr.setLeft(curr.getRight());
+        curr.setRight(temp);
+
+        if (curr.getLeft() != null) 
+        {
+            q.add(curr.getLeft());
+        }
+
+        if (curr.getRight() != null) 
+        {
+            q.add(curr.getRight());
+        }
+    }
+}
+
+	
+public void mirrorImage() 
+{
+    if (root == null) 
+    {
+        return;
+    }
+
+    Queue<BTNode> q = new LinkedList<BTNode>();
+    q.add(root);
+
+    while (!q.isEmpty()) 
+    {
+        BTNode curr = q.remove();
+
+        // Swap left and right children
+        BTNode temp = curr.getLeft();
+        curr.setLeft(curr.getRight());
+        curr.setRight(temp);
+
+        if (curr.getLeft() != null) 
+        {
+            q.add(curr.getLeft());
+        }
+
+        if (curr.getRight() != null) 
+        {
+            q.add(curr.getRight());
+        }
+    }
+}	
 
 }
